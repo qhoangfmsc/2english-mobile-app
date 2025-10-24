@@ -1,0 +1,42 @@
+---
+alwaysApply: true
+---
+
+# Source Structure
+
+## Cấu trúc project 
+- Luôn tuân thủ cấu trúc này để viết các modules tiếp theo:
+/app
+    /components                 - Chứa các components sử dụng chung cho toàn bộ project
+    /modules                    - Mỗi screen sẽ được phân chia dạng modules/features
+        /starter                    - Là modules starter (đây là ví dụ 1 modules/features)
+            /common                     - Chứa các type, interface,... của modules starter (chứa các file ts)
+            /components                 - Là các components dành riêng cho modules starter
+                LanguagueStep.tsx           - Là các file component của modules starter
+                LevelStep.tsx               
+            /screens                    - Chứa các screens
+                GetStartedScreen.tsx        - Screen liên quan đến starter
+                StarterScreen.tsx           - Screen liên quan đến starter
+            /stores                     - Chứa các reducer
+            /hooks                      - Chứa các hooks
+            /utils                      - Chứa các function
+            ...
+
+        /register                   - Các modules khác
+        /login                      - Trong trường hợp 1 modules tách ra nhiều hướng thì tách nhỏ trước rồi tuân theo structure
+            /google
+            /default
+        ...
+    _layout.tsx                 - Chứa layout mặc định của toàn app
+    index.tsx                   - Chứa trang chủ
+
+
+## Cách tổ chức file code tsx:
+    - Các useState luôn ở trên đầu của 1 function
+    - Các useEffect luôn ưu tiên ngay sau
+    - Các function xử lý logic
+    - Các component con cần tách ra (nếu có)
+    - Return component chính
+
+## Cách tổ chức 1 screen
+    - Thay vì tạo 1 file starter.tsx để làm 1 screen, thì viết trong /modules/starter/screens/StarterScreen.tsx và sử dụng file StarterScreen này

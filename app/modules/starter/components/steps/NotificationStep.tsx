@@ -1,7 +1,7 @@
 import * as Notifications from 'expo-notifications';
 import React, { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { OnboardingStepProps } from '../../types';
+import { OnboardingStepProps } from '../../common/types';
 
 // Cấu hình notification behavior
 Notifications.setNotificationHandler({

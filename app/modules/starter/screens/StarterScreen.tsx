@@ -2,6 +2,7 @@ import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ProgressBar from '../../../components/ProgressBar';
+import { OnboardingData, OnboardingStep } from '../common/types';
 import CompletionStep from '../components/steps/CompletionStep';
 import LanguageStep from '../components/steps/LanguageStep';
 import LearningMethodStep from '../components/steps/LearningMethodStep';
@@ -9,7 +10,6 @@ import LevelStep from '../components/steps/LevelStep';
 import NotificationStep from '../components/steps/NotificationStep';
 import ReasonStep from '../components/steps/ReasonStep';
 import TopicStep from '../components/steps/TopicStep';
-import { OnboardingData, OnboardingStep } from '../types';
 
 export default function StarterScreen() {
   const [currentStep, setCurrentStep] = useState<OnboardingStep>(1);
